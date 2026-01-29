@@ -2,183 +2,136 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 
-// Diccionari de traduccions
 const translations = {
   en: {
-    heroTitle1: "CUSTOM",
-    heroTitle2: "WITHOUT LIMITS.",
-    heroSub: "The ultimate tool for builders and enthusiasts. Design your Sportster in 3D with real parts from legendary brands.",
-    cta: "GET EARLY ACCESS",
-    placeholder: "Your best email...",
-    process: "PROCESS",
-    step1: "The Chassis",
-    step1Desc: "Choose your base: from Iron 883 to Forty-Eight.",
-    step2: "Detailed Care",
-    step2Desc: "Exhausts, handlebars, and designer seats.",
-    step3: "3D Paint",
-    step3Desc: "Flake, matte, or gloss finishes in real-time.",
-    step4: "To the Shop",
-    step4Desc: "Send the blueprint directly to your mechanic."
+    hero1: "CUSTOM", hero2: "WITHOUT LIMITS.",
+    sub: "The ultimate 3D tool for builders. Design your Sportster with real parts.",
+    cta: "GET EARLY ACCESS", ph: "Your email...",
+    procTitle: "PROCESS",
+    s1: "Chassis", s1d: "Choose your base: Iron 883 or Forty-Eight.",
+    s2: "Parts", s2d: "Exhausts, handlebars and premium seats.",
+    s3: "3D Paint", s3d: "Flake, matte or gloss in real-time.",
+    s4: "Shop", s4d: "Send the plan to your mechanic.",
+    legal: "Legal", privacy: "Privacy", cookies: "Cookies"
   },
   es: {
-    heroTitle1: "CUSTOM",
-    heroTitle2: "SIN LÍMITES.",
-    heroSub: "La herramienta definitiva para constructores y entusiastas. Diseña tu Sportster en 3D con piezas reales de marcas legendarias.",
-    cta: "ACCESO BETA",
-    placeholder: "Tu mejor correo...",
-    process: "PROCESO",
-    step1: "El Chasis",
-    step1Desc: "Elige tu base: de la Iron 883 a la Forty-Eight.",
-    step2: "Cuidado Detallado",
-    step2Desc: "Escapes, manillares y asientos de autor.",
-    step3: "Pintura 3D",
-    step3Desc: "Acabados flake, mate o brillo en tiempo real.",
-    step4: "Al Taller",
-    step4Desc: "Envía el plano directamente a tu mecánico."
+    hero1: "CUSTOM", hero2: "SIN LÍMITES.",
+    sub: "La herramienta 3D definitiva. Diseña tu Sportster con piezas reales.",
+    cta: "ACCESO BETA", ph: "Tu correo...",
+    procTitle: "PROCESO",
+    s1: "Chasis", s1d: "Elige tu base: Iron 883 o Forty-Eight.",
+    s2: "Piezas", s2d: "Escapes, manillares y asientos premium.",
+    s3: "Pintura 3D", s3d: "Flake, mate o brillo en tiempo real.",
+    s4: "Taller", s4d: "Envía el plano a tu mecánico.",
+    legal: "Legal", privacy: "Privacidad", cookies: "Cookies"
   },
   fr: {
-    heroTitle1: "CUSTOM",
-    heroTitle2: "SANS LIMITES.",
-    heroSub: "L'outil ultime pour les constructeurs. Concevez votre Sportster en 3D avec des pièces réelles.",
-    cta: "ACCÈS BETA",
-    placeholder: "Votre email...",
-    process: "PROCESSUS",
-    step1: "Le Châssis",
-    step1Desc: "Choisissez votre base : de Iron 883 à Forty-Eight.",
-    step2: "Détails",
-    step2Desc: "Échappements, guidons et sièges design.",
-    step3: "Peinture 3D",
-    step3Desc: "Finitions flake, mat ou brillant en temps réel.",
-    step4: "À l'Atelier",
-    step4Desc: "Envoyez le plan directement à votre mécanicien."
+    hero1: "CUSTOM", hero2: "SANS LIMITES.",
+    sub: "L'outil 3D ultime pour les builders. Créez votre Sportster.",
+    cta: "ACCÈS BETA", ph: "Votre email...",
+    procTitle: "PROCESSUS",
+    s1: "Châssis", s1d: "Choisissez votre base.",
+    s2: "Pièces", s2d: "Échappements et guidons premium.",
+    s3: "Peinture 3D", s3d: "Flake, mat ou brillant.",
+    s4: "Atelier", s4d: "Envoyez le plan à votre mécanicien.",
+    legal: "Légal", privacy: "Confidentialité", cookies: "Cookies"
   },
   de: {
-    heroTitle1: "CUSTOM",
-    heroTitle2: "OHNE GRENZEN.",
-    heroSub: "Das ultimative Werkzeug für Builder. Gestalte deine Sportster in 3D mit echten Teilen.",
-    cta: "BETA-ZUGANG",
-    placeholder: "Deine E-Mail...",
-    process: "PROZESS",
-    step1: "Das Fahrgestell",
-    step1Desc: "Wähle deine Basis: von Iron 883 bis Forty-Eight.",
-    step2: "Details",
-    step2Desc: "Auspuffe, Lenker und Designersitze.",
-    step3: "3D-Lack",
-    step3Desc: "Flake-, Matt- oder Glanzfinish in Echtzeit.",
-    step4: "Zur Werkstatt",
-    step4Desc: "Sende den Plan direkt an deinen Mechaniker."
+    hero1: "CUSTOM", hero2: "OHNE GRENZEN.",
+    sub: "Das ultimative 3D-Tool. Gestalte deine Sportster neu.",
+    cta: "BETA-ZUGANG", ph: "Deine E-Mail...",
+    procTitle: "PROZESS",
+    s1: "Fahrgestell", s1d: "Wähle deine Basis.",
+    s2: "Teile", s2d: "Auspuff und Lenker.",
+    s3: "3D-Lack", s3d: "Flake, Matt oder Glanz.",
+    s4: "Werkstatt", s4d: "Sende den Plan an deinen Shop.",
+    legal: "Rechtliches", privacy: "Datenschutz", cookies: "Cookies"
   },
   it: {
-    heroTitle1: "CUSTOM",
-    heroTitle2: "SENZA LIMITI.",
-    heroSub: "Lo strumento definitivo per i costruttori. Progetta la tua Sportster in 3D con parti reali.",
-    cta: "ACCESSO BETA",
-    placeholder: "La tua email...",
-    process: "PROCESSO",
-    step1: "Il Telaio",
-    step1Desc: "Scegli la tua base: dalla Iron 883 alla Forty-Eight.",
-    step2: "Dettagli",
-    step2Desc: "Scarichi, manubri e selle di design.",
-    step3: "Vernice 3D",
-    step3Desc: "Finiture flake, opache o lucide in tempo reale.",
-    step4: "In Officina",
-    step4Desc: "Invia il progetto direttamente al tuo meccanico."
+    hero1: "CUSTOM", hero2: "SENZA LIMITI.",
+    sub: "Lo strumento 3D definitivo. Progetta la tua Sportster.",
+    cta: "ACCESSO BETA", ph: "La tua email...",
+    procTitle: "PROCESSO",
+    s1: "Telaio", s1d: "Scegli la tua base.",
+    s2: "Parti", s2d: "Scarichi e manubri premium.",
+    s3: "Vernice 3D", s3d: "Flake, opaca o lucida.",
+    s4: "Officina", s4d: "Invia il progetto al meccanico.",
+    legal: "Legale", privacy: "Privacy", cookies: "Cookies"
   }
 };
 ---
 
-<Layout title="Sportster Inspiration | 3D Custom Configurator">
-	
-	<nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black border-b border-zinc-800">
-		<div class="font-black text-2xl tracking-tighter uppercase italic text-white">
-			SPORTSTER<span class="text-orange-600">INSPIRATION</span>
-		</div>
-		
-		<div class="flex items-center gap-6">
-			<select id="langSelector" class="bg-transparent text-white border border-zinc-700 text-[10px] font-bold py-1 px-2 rounded uppercase tracking-widest outline-none cursor-pointer hover:border-white transition-colors">
-				<option value="en">EN</option>
-				<option value="es">ES</option>
-				<option value="de">DE</option>
-				<option value="it">IT</option>
-				<option value="fr">FR</option>
+<Layout title="Sportster Inspiration | 3D Configurator">
+	<nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black border-b border-zinc-900">
+		<div class="font-black text-xl tracking-tighter uppercase italic text-white">SPORTSTER<span class="text-orange-600">INSPIRATION</span></div>
+		<div class="flex items-center gap-4">
+			<select id="langSelector" class="bg-transparent text-white border border-zinc-800 text-[10px] font-bold py-1 px-2 uppercase outline-none cursor-pointer">
+				<option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="fr">FR</option>
 			</select>
-			<a href="#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-orange-600 hover:text-white transition-all">JOIN BETA</a>
 		</div>
 	</nav>
 
-	<section class="relative h-screen flex items-center justify-center px-6 overflow-hidden bg-black">
-		<div class="absolute inset-0 z-0">
-			<img src="https://images.unsplash.com/photo-1558981403-c5f9109ad088?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-60 scale-100" alt="Harley Sportster Custom" />
-			<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black z-10"></div>
+	<section class="relative h-[90vh] flex items-center justify-center px-6 bg-black">
+		<div class="absolute inset-0 opacity-60">
+			<img src="https://images.unsplash.com/photo-1558981403-c5f9109ad088?q=80&w=2000" class="w-full h-full object-cover" alt="Harley" />
 		</div>
-
-		<div class="relative z-20 text-center max-w-6xl">
-			<h1 class="text-7xl md:text-[140px] font-black mb-4 leading-[0.85] tracking-tighter text-white uppercase italic">
-				<span data-key="heroTitle1">CUSTOM</span><br/>
-				<span class="text-white" data-key="heroTitle2">WITHOUT LIMITS.</span>
+		<div class="relative z-10 text-center">
+			<h1 class="text-6xl md:text-[120px] font-black leading-[0.85] text-white uppercase italic tracking-tighter mb-6">
+				<span data-key="hero1">CUSTOM</span><br/><span data-key="hero2">WITHOUT LIMITS.</span>
 			</h1>
-			<p class="text-zinc-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium tracking-wide" data-key="heroSub">
-				The ultimate tool for builders and enthusiasts. Design your Sportster in 3D with real parts from legendary brands.
-			</p>
-			
-			<form action="https://assets.mailerlite.com/jsonp/2073020/forms/177926962836145822/subscribe" method="POST" class="bg-black/80 backdrop-blur-sm border border-zinc-700 p-1 rounded-sm max-w-md mx-auto flex flex-col md:flex-row gap-0 shadow-2xl">
-				<input 
-					type="email" 
-					name="fields[email]"
-					data-key-placeholder="placeholder"
-					placeholder="Your best email..." 
-					class="bg-transparent px-6 py-4 w-full outline-none text-white text-sm" 
-					required 
-				/>
-				<button type="submit" class="bg-white text-black font-black py-4 px-8 transition-all hover:bg-orange-600 hover:text-white uppercase tracking-tighter text-xs whitespace-nowrap" data-key="cta">
-					GET EARLY ACCESS
-				</button>
+			<p class="text-zinc-400 text-lg mb-8 max-w-xl mx-auto" data-key="sub"></p>
+			<form action="https://assets.mailerlite.com/jsonp/2073020/forms/177926962836145822/subscribe" method="POST" class="flex flex-col md:flex-row max-w-md mx-auto border border-zinc-800 p-1 bg-black/50">
+				<input type="email" name="fields[email]" data-key-placeholder="ph" class="bg-transparent p-4 w-full text-white outline-none text-sm" required />
+				<button type="submit" class="bg-white text-black font-black px-8 py-4 text-xs uppercase hover:bg-orange-600 hover:text-white transition-all" data-key="cta"></button>
 			</form>
 		</div>
 	</section>
 
+	<section class="py-24 bg-black px-6">
+		<h2 class="text-4xl font-black text-white text-center mb-16 italic uppercase" data-key="procTitle"></h2>
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+			<div class="text-center">
+				<div class="text-orange-600 font-black text-4xl mb-4 italic">01</div>
+				<h3 class="text-white font-bold uppercase mb-2" data-key="s1"></h3>
+				<p class="text-zinc-500 text-sm" data-key="s1d"></p>
+			</div>
+			<div class="text-center">
+				<div class="text-orange-600 font-black text-4xl mb-4 italic">02</div>
+				<h3 class="text-white font-bold uppercase mb-2" data-key="s2"></h3>
+				<p class="text-zinc-500 text-sm" data-key="s2d"></p>
+			</div>
+			<div class="text-center">
+				<div class="text-orange-600 font-black text-4xl mb-4 italic">03</div>
+				<h3 class="text-white font-bold uppercase mb-2" data-key="s3"></h3>
+				<p class="text-zinc-500 text-sm" data-key="s3d"></p>
+			</div>
+			<div class="text-center">
+				<div class="text-orange-600 font-black text-4xl mb-4 italic">04</div>
+				<h3 class="text-white font-bold uppercase mb-2" data-key="s4"></h3>
+				<p class="text-zinc-500 text-sm" data-key="s4d"></p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="py-12 bg-black border-t border-zinc-900 px-6 text-center">
+		<div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+			<a href="/legal" data-key="legal" class="hover:text-white"></a>
+			<a href="/privacy" data-key="privacy" class="hover:text-white"></a>
+			<a href="/cookies" data-key="cookies" class="hover:text-white"></a>
+		</div>
+		<p class="text-[9px] text-zinc-700 uppercase">© 2026 Sportster Inspiration. All rights reserved.</p>
+	</footer>
 </Layout>
 
 <script define:vars={{ translations }}>
-	// Lògica de detecció d'idioma i canvi de textos
 	const selector = document.getElementById('langSelector');
-	
-	function updateText(lang) {
-		const dict = translations[lang] || translations['en'];
-		
-		// Actualitzar textos amb data-key
-		document.querySelectorAll('[data-key]').forEach(el => {
-			const key = el.getAttribute('data-key');
-			if (dict[key]) el.innerText = dict[key];
-		});
-
-		// Actualitzar placeholders
-		document.querySelectorAll('[data-key-placeholder]').forEach(el => {
-			const key = el.getAttribute('data-key-placeholder');
-			if (dict[key]) el.setAttribute('placeholder', dict[key]);
-		});
-		
+	function update(lang) {
+		const d = translations[lang] || translations['en'];
+		document.querySelectorAll('[data-key]').forEach(el => el.innerText = d[el.getAttribute('data-key')]);
+		document.querySelectorAll('[data-key-placeholder]').forEach(el => el.placeholder = d[el.getAttribute('data-key-placeholder')]);
 		selector.value = lang;
 	}
-
-	// 1. Detectar idioma del navegador
-	const navLang = navigator.language.split('-')[0];
-	const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];
-	const defaultLang = supportedLangs.includes(navLang) ? navLang : 'en';
-
-	// 2. Inicialitzar
-	updateText(defaultLang);
-
-	// 3. Escoltar canvis manuals
-	selector.addEventListener('change', (e) => {
-		updateText(e.target.value);
-	});
+	const nLang = navigator.language.split('-')[0];
+	update(['en','es','de','it','fr'].includes(nLang) ? nLang : 'en');
+	selector.addEventListener('change', (e) => update(e.target.value));
 </script>
-
-<style is:global>
-	/* Tipografia estil Harley (Condensada) */
-	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap');
-	
-	h1 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-	body { font-family: 'Inter', sans-serif; background-color: black; }
-</style>
