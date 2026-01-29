@@ -7,3 +7,15 @@
 h1, h2, h3 {
   font-family: var(--font-oswald);
 }
+    
+/* Això elimina l'ombra lletja que posen alguns navegadors al selector */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0; /* Estil més quadrat i industrial */
+}
+
+/* Això asegura que quan cliques, el fons no es torni blanc */
+select:focus {
+    background-color: #18181b; 
+}
