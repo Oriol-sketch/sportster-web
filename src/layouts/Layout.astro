@@ -71,48 +71,45 @@ const { title } = Astro.props;
             </div>
         </div>
 
-        <script is:inline define:vars={{ allTranslations }}>
-            const langSelector = document.getElementById('langSelector');
-            
-            function updateLanguage(lang) {
-                const translations = allTranslations[lang];
-                if (!translations) return;
+		<script is:inline define:vars={{ allTranslations }}>
+			const langSelector = document.getElementById('langSelector');
+			
+			function updateLanguage(lang) {
+				const translations = allTranslations[lang];
+				if (!translations) return;
 
-                document.querySelectorAll('[data-key]').forEach(el => {
-                    const key = el.getAttribute('data-key');
-                    if (translations[key]) {
-                        if (el.tagName === 'INPUT') {
-                            el.placeholder = translations[key];
-                        } else {
-                            el.innerText = translations[key];
-                        }
-                    }
-                });
+				// Tradueix tots els elements amb data-key
+				document.querySelectorAll('[data-key]').forEach(el => {
+					const key = el.getAttribute('data-key');
+					if (translations[key]) {
+						if (el.tagName === 'INPUT') {
+							el.placeholder = translations[key];
+						} else {
+							// Fem servir innerHTML per permetre negretes si cal
+							el.innerHTML = translations[key];
+						}
+					}
+				});
 
-                localStorage.setItem('preferred-lang', lang);
-                if (langSelector) langSelector.value = lang;
-                document.documentElement.lang = lang;
-            }
+				localStorage.setItem('preferred-lang', lang);
+				if (langSelector) langSelector.value = lang;
+				document.documentElement.lang = lang;
+			}
 
-            langSelector?.addEventListener('change', (e) => updateLanguage(e.target.value));
+			langSelector?.addEventListener('change', (e) => updateLanguage(e.target.value));
 
-            // Inicialització
-            const savedLang = localStorage.getItem('preferred-lang');
-            const browserLang = navigator.language.split('-')[0];
-            const defaultLang = savedLang || (allTranslations[browserLang] ? browserLang : 'en');
-            updateLanguage(defaultLang);
-
-            // Lògica de Cookies (independent)
-            const banner = document.getElementById('cookie-banner');
-            const btn = document.getElementById('accept-cookies');
-            if (!localStorage.getItem('cookies-accepted')) {
-                setTimeout(() => banner?.classList.remove('translate-y-full'), 1000);
-            }
-            btn?.addEventListener('click', () => {
-                localStorage.setItem('cookies-accepted', 'true');
-                banner?.classList.add('translate-y-full');
-            });
-        </script>
+			// Inicialització al carregar la pàgina
+			document.addEventListener('DOMContentLoaded', () => {
+				const savedLang = localStorage.getItem('preferred-lang');
+				const browserLang = navigator.language.split('-')[0];
+				const defaultLang = savedLang || (allTranslations[browserLang] ? browserLang : 'en');
+				updateLanguage(defaultLang);
+			});
+			
+			// Execució immediata per evitar parpelleig de text
+			const savedLang = localStorage.getItem('preferred-lang');
+			updateLanguage(savedLang || 'en');
+		</script>
     </body>
 </html>
 
