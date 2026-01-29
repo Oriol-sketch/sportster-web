@@ -7,76 +7,95 @@ const translations = {
     heroSubtitle: "THE ULTIMATE 3D SPORTSTER CONFIGURATOR",
     joinBeta: "JOIN THE BETA",
     emailPlaceholder: "ENTER YOUR EMAIL",
-    footerLegal: "LEGAL",
-    footerPrivacy: "PRIVACY",
-    footerCookies: "COOKIES",
+    step1Title: "CHOOSE BASE",
+    step1Desc: "Select your Sportster model year.",
+    step2Title: "CUSTOMIZE",
+    step2Desc: "Change tanks, seats, bars and more in 3D.",
+    step3Title: "RIDE",
+    step3Desc: "Export your build and make it real.",
     cookieText: "We use cookies to improve your experience. By continuing, you accept our ",
-    cookieAccept: "ACCEPT"
+    cookieAccept: "ACCEPT",
+    cookies: "cookies"
   },
   es: {
     heroTitle: "CONSTRUYE TU SUEÑO",
     heroSubtitle: "EL CONFIGURADOR 3D DEFINITIVO PARA SPORTSTER",
     joinBeta: "ÚNETE A LA BETA",
     emailPlaceholder: "TU CORREO ELECTRÓNICO",
-    footerLegal: "LEGAL",
-    footerPrivacy: "PRIVACIDAD",
-    footerCookies: "COOKIES",
+    step1Title: "ELIGE BASE",
+    step1Desc: "Selecciona el año de tu modelo Sportster.",
+    step2Title: "PERSONALIZA",
+    step2Desc: "Cambia depósitos, asientos y más en 3D.",
+    step3Title: "RIDE",
+    step3Desc: "Exporta tu diseño y hazlo realidad.",
     cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra ",
-    cookieAccept: "ACEPTAR"
-  },
-  de: {
-    heroTitle: "BAU DEINEN TRAUM",
-    heroSubtitle: "DER ULTIMATIVE 3D SPORTSTER KONFIGURATOR",
-    joinBeta: "BETA BEITRETEN",
-    emailPlaceholder: "DEINE E-MAIL",
-    footerLegal: "RECHTLICHES",
-    footerPrivacy: "DATENSCHUTZ",
-    footerCookies: "COOKIES",
-    cookieText: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Mit der Fortsetzung akzeptieren Sie unsere ",
-    cookieAccept: "AKZEPTIEREN"
-  },
-  it: {
-    heroTitle: "COSTRUISCI IL TUO SOGNO",
-    heroSubtitle: "IL CONFIGURATORE 3D SPORTSTER DEFINITIVO",
-    joinBeta: "UNISCITI ALLA BETA",
-    emailPlaceholder: "LA TUA EMAIL",
-    footerLegal: "LEGALE",
-    footerPrivacy: "PRIVACY",
-    footerCookies: "COOKIES",
-    cookieText: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando, accetti la nostra ",
-    cookieAccept: "ACCETTA"
+    cookieAccept: "ACEPTAR",
+    cookies: "cookies"
   },
   fr: {
     heroTitle: "CONSTRUISEZ VOTRE RÊVE",
     heroSubtitle: "LE CONFIGURATEUR 3D SPORTSTER ULTIME",
     joinBeta: "REJOINDRE LA BÊTA",
     emailPlaceholder: "VOTRE E-MAIL",
-    footerLegal: "MENTIONS LÉGALES",
-    footerPrivacy: "CONFIDENTIALITÉ",
-    footerCookies: "COOKIES",
+    step1Title: "CHOISIR LA BASE",
+    step1Desc: "Sélectionnez l'année de votre modèle Sportster.",
+    step2Title: "PERSONNALISER",
+    step2Desc: "Changez réservoirs, selles et plus en 3D.",
+    step3Title: "ROULER",
+    step3Desc: "Exportez votre projet et donnez-lui vie.",
     cookieText: "Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre ",
-    cookieAccept: "ACCEPTER"
+    cookieAccept: "ACCEPTER",
+    cookies: "cookies"
+  },
+  de: {
+    heroTitle: "BAU DEINEN TRAUM",
+    heroSubtitle: "DER ULTIMATIVE 3D SPORTSTER KONFIGURATOR",
+    joinBeta: "BETA BEITRETEN",
+    emailPlaceholder: "DEINE E-MAIL",
+    step1Title: "BASIS WÄHLEN",
+    step1Desc: "Wähle das Baujahr deiner Sportster.",
+    step2Title: "ANPASSEN",
+    step2Desc: "Tanks, Sitze, Lenker und mehr in 3D ändern.",
+    step3Title: "FAHREN",
+    step3Desc: "Exportiere dein Design und mach es wahr.",
+    cookieText: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Mit der Fortsetzung akzeptieren Sie unsere ",
+    cookieAccept: "AKZEPTIEREN",
+    cookies: "cookies"
+  },
+  it: {
+    heroTitle: "COSTRUISCI IL TUO SOGNO",
+    heroSubtitle: "IL CONFIGURATORE 3D SPORTSTER DEFINITIVO",
+    joinBeta: "UNISCITI ALLA BETA",
+    emailPlaceholder: "LA TUA EMAIL",
+    step1Title: "SCEGLI BASE",
+    step1Desc: "Seleziona l'anno del tuo modello Sportster.",
+    step2Title: "PERSONALIZZA",
+    step2Desc: "Cambia serbatoi, sella e altro in 3D.",
+    step3Title: "GUIDA",
+    step3Desc: "Esporta il tuo design e rendilo reale.",
+    cookieText: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando, accetti la nostra ",
+    cookieAccept: "ACCETTA",
+    cookies: "cookies"
   }
 };
 ---
 
 <Layout title="Sportster Inspiration | 3D Configurator">
-  <main class="relative h-screen w-full overflow-hidden bg-black">
-    
+  <section class="relative h-screen w-full overflow-hidden bg-black">
     <div class="absolute inset-0 z-0">
       <img 
         src="/hero-moto.jpg" 
-        alt="Harley Sportster Custom" 
+        alt="Harley Davidson Sportster" 
         class="h-full w-full object-cover opacity-60"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
     </div>
 
     <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-      <h1 class="mb-2 text-6xl font-black italic tracking-tighter text-white md:text-9xl" data-key="heroTitle">
+      <h1 class="mb-2 text-6xl font-black italic tracking-tighter text-white md:text-9xl uppercase" data-key="heroTitle">
         BUILD YOUR DREAM
       </h1>
-      <p class="mb-12 text-xs font-bold tracking-[0.3em] text-zinc-400 md:text-sm" data-key="heroSubtitle">
+      <p class="mb-12 text-xs font-bold tracking-[0.3em] text-zinc-400 md:text-sm uppercase" data-key="heroSubtitle">
         THE ULTIMATE 3D SPORTSTER CONFIGURATOR
       </p>
 
@@ -103,29 +122,50 @@ const translations = {
         </button>
       </form>
     </div>
+  </section>
 
-    <div class="absolute bottom-10 right-10 z-20">
-      <select 
-        id="langSelector" 
-        class="bg-zinc-900 text-white border border-zinc-800 text-[10px] font-bold py-2 px-3 uppercase outline-none cursor-pointer hover:border-orange-600 transition-colors"
-      >
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-        <option value="de">DE</option>
-        <option value="it">IT</option>
-        <option value="fr">FR</option>
-      </select>
+  <section class="bg-black py-32 px-6 border-t border-zinc-900 relative z-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="text-center group">
+        <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">01</span>
+        <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step1Title">CHOOSE BASE</h3>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step1Desc">Select your Sportster model year.</p>
+      </div>
+      <div class="text-center group">
+        <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">02</span>
+        <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step2Title">CUSTOMIZE</h3>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step2Desc">Change tanks, seats, bars and more in 3D.</p>
+      </div>
+      <div class="text-center group">
+        <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">03</span>
+        <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step3Title">RIDE</h3>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step3Desc">Export your build and make it real.</p>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <div class="fixed bottom-10 right-10 z-50">
+    <select 
+      id="langSelector" 
+      class="bg-zinc-900 text-white border border-zinc-800 text-[10px] font-bold py-2 px-3 uppercase outline-none cursor-pointer hover:border-orange-600 transition-colors shadow-2xl"
+    >
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+      <option value="de">DE</option>
+      <option value="it">IT</option>
+      <option value="fr">FR</option>
+    </select>
+  </div>
 </Layout>
 
 <script is:inline define:vars={{ translations }}>
   const langSelector = document.getElementById('langSelector');
   
   function updateLanguage(lang) {
+    // 1. Actualizar textos en la página (Landing + Banner en Layout)
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
-      if (translations[lang][key]) {
+      if (translations[lang] && translations[lang][key]) {
         if (el.tagName === 'INPUT') {
           el.placeholder = translations[lang][key];
         } else {
@@ -133,13 +173,18 @@ const translations = {
         }
       }
     });
+
+    // 2. Guardar preferencia
     localStorage.setItem('preferred-lang', lang);
     langSelector.value = lang;
+    
+    // 3. Cambiar el atributo lang del HTML para SEO
+    document.documentElement.lang = lang;
   }
 
   langSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
 
-  // Detectar idioma inicial
+  // Inicialización
   const savedLang = localStorage.getItem('preferred-lang');
   const browserLang = navigator.language.split('-')[0];
   const defaultLang = savedLang || (translations[browserLang] ? browserLang : 'en');
