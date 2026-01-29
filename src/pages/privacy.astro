@@ -1,37 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Política de Privacidad | Sportster Inspiration">
+
+<Layout title="Cookies Policy | Sportster Inspiration">
     <section class="max-w-3xl mx-auto px-6 py-32 min-h-screen">
         <h1 class="text-5xl md:text-7xl font-black italic uppercase mb-12 tracking-tighter text-white">
-            PRIVACY <span class="text-orange-600">POLICY</span>
+            <span data-key="cookTitleMain">COOKIES</span> <span class="text-orange-600" data-key="cookTitleSub">POLICY</span>
         </h1>
         
         <div class="text-zinc-400 space-y-8 font-light leading-relaxed text-sm md:text-base">
-            <p class="text-xl text-white font-medium italic mb-10">Tu privacidad es tan sagrada como el rugido de un motor V-Twin.</p>
+            <p data-key="cookIntro"></p>
             
             <div class="space-y-4">
-                <h2 class="text-white font-bold uppercase tracking-wider text-lg">RESPONSABLE DEL TRATAMIENTO</h2>
-                <p>Oriol [Cognom], con domicilio en Terrassa, es el responsable del tratamiento de los datos personales que nos facilitas al suscribirte a nuestra lista de espera.</p>
+                <h2 class="text-white font-bold uppercase tracking-wider text-lg" data-key="cookS1Title">1. ¿QUÉ SON LAS COOKIES?</h2>
+                <p data-key="cookS1Desc"></p>
             </div>
 
             <div class="space-y-4">
-                <h2 class="text-white font-bold uppercase tracking-wider text-lg">FINALIDAD Y LEGITIMACIÓN</h2>
-                <p>La finalidad es gestionar tu registro en la fase Beta del configurador 3D y enviarte actualizaciones sobre el proyecto. La base legal es tu consentimiento explícito al introducir tu email en el formulario de registro.</p>
+                <h2 class="text-white font-bold uppercase tracking-wider text-lg" data-key="cookS2Title">2. COOKIES QUE UTILIZAMOS</h2>
+                <p data-key="cookS2Desc"></p>
             </div>
 
             <div class="space-y-4">
-                <h2 class="text-white font-bold uppercase tracking-wider text-lg">CONSERVACIÓN DE LOS DATOS</h2>
-                <p>Tus datos se conservarán mientras exista un interés mutuo para mantener el fin del tratamiento. Podrás solicitar la baja en cualquier momento a través de los enlaces incluidos en nuestros correos o contactando directamente con nosotros.</p>
-            </div>
-
-            <div class="space-y-4">
-                <h2 class="text-white font-bold uppercase tracking-wider text-lg">DERECHOS</h2>
-                <p>Tienes derecho a acceder, rectificar, suprimir y portar tus datos personales, así como a limitar u oponerte a su tratamiento de acuerdo con el Reglamento General de Protección de Datos (UE) 2016/679.</p>
+                <h2 class="text-white font-bold uppercase tracking-wider text-lg" data-key="cookS3Title">3. CONTROL DE COOKIES</h2>
+                <p data-key="cookS3Desc"></p>
             </div>
         </div>
 
-        <a href="/" class="inline-block mt-20 border-b border-orange-600 text-orange-600 pb-1 font-black uppercase text-xs tracking-[0.3em] hover:text-white hover:border-white transition-all">
+        <a href="/" class="inline-block mt-20 border-b border-orange-600 text-orange-600 pb-1 font-black uppercase text-xs tracking-[0.3em] hover:text-white hover:border-white transition-all" data-key="backToGarage">
             ← BACK TO GARAGE
         </a>
     </section>
