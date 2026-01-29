@@ -11,9 +11,17 @@
   "step3Desc": "Esporta il tuo design e rendilo reale.",
   "step4Title": "CONDIVIDI",
   "step4Desc": "Mostra la tua creazione alla community.",
+
+  "b2bTitle": "SEI UN PROFESSIONISTA?",
+  "b2bDesc": "Vogliamo connettere produttori di ricambi e officine con clienti che sanno esattamente cosa vogliono. Se vuoi che i tuoi componenti appaiano nel configuratore o vuoi offrire questo strumento nella tua officina, contattaci.",
+  "b2bLink": "CONTATTO PER PROFESSIONISTI",
+  "socialTitle": "CREATO DALLA COMUNITÀ, PER LA COMUNITÀ",
+  "socialDesc": "Abbiamo ascoltato la nostra comunità e stiamo creando lo strumento che tutti chiedevano.",
+
   "footerLegal": "Legale",
   "footerPrivacy": "Privacy",
   "footerCookies": "Cookie",
+
   "cookieText": "Utilizziamo i cookie. Continuando, accetti la nostra ",
   "cookieAccept": "ACCETTA",
   "backToGarage": "← TORNA AL GARAGE",

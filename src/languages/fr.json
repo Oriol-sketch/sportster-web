@@ -11,9 +11,17 @@
   "step3Desc": "Exportez votre projet et donnez-lui vie.",
   "step4Title": "PARTAGER",
   "step4Desc": "Montrez votre création à la communauté.",
+
+  "b2bTitle": "VOUS ÊTES UN PROFESSIONNEL ?",
+  "b2bDesc": "Nous voulons connecter les fabricants de pièces et les ateliers avec des clients qui savent exactement ce qu'ils veulent. Si vous souhaitez que vos composants apparaissent dans le configurateur ou proposer cet outil dans votre atelier, contactez-nous.",
+  "b2bLink": "CONTACT POUR PROFESSIONNELS",
+  "socialTitle": "CRÉÉ PAR ET POUR LA COMMUNAUTÉ",
+  "socialDesc": "Nous avons écouté notre communauté et nous créons l'outil que tout le monde demandait.",
+
   "footerLegal": "Légal",
   "footerPrivacy": "Confidentialité",
   "footerCookies": "Cookies",
+
   "cookieText": "Nous utilisons des cookies. En continuant, vous acceptez nos ",
   "cookieAccept": "ACCEPTER",
   "backToGarage": "← RETOUR AU GARAGE",
