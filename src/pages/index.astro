@@ -1,151 +1,148 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
 
 const translations = {
   en: {
-    hero1: "CUSTOM", hero2: "WITHOUT LIMITS.",
-    sub: "The ultimate 3D tool for builders. Design your Sportster with real parts.",
-    cta: "GET EARLY ACCESS", ph: "Your email...",
-    procTitle: "PROCESS",
-    s1: "Chassis", s1d: "Choose your base: Iron 883 or Forty-Eight.",
-    s2: "Parts", s2d: "Exhausts, handlebars and premium seats.",
-    s3: "3D Paint", s3d: "Flake, matte or gloss in real-time.",
-    s4: "Shop", s4d: "Send the plan to your mechanic.",
-    legal: "Legal", privacy: "Privacy", cookies: "Cookies"
-	cookieText: "We use cookies to improve your experience. By continuing to browse, you accept our ",
+    heroTitle: "BUILD YOUR DREAM",
+    heroSubtitle: "THE ULTIMATE 3D SPORTSTER CONFIGURATOR",
+    joinBeta: "JOIN THE BETA",
+    emailPlaceholder: "ENTER YOUR EMAIL",
+    footerLegal: "LEGAL",
+    footerPrivacy: "PRIVACY",
+    footerCookies: "COOKIES",
+    cookieText: "We use cookies to improve your experience. By continuing, you accept our ",
     cookieAccept: "ACCEPT"
   },
   es: {
-    hero1: "CUSTOM", hero2: "SIN LÍMITES.",
-    sub: "La herramienta 3D definitiva. Diseña tu Sportster con piezas reales.",
-    cta: "ACCESO BETA", ph: "Tu correo...",
-    procTitle: "PROCESO",
-    s1: "Chasis", s1d: "Elige tu base: Iron 883 o Forty-Eight.",
-    s2: "Piezas", s2d: "Escapes, manillares y asientos premium.",
-    s3: "Pintura 3D", s3d: "Flake, mate o brillo en tiempo real.",
-    s4: "Taller", s4d: "Envía el plano a tu mecánico.",
-    legal: "Legal", privacy: "Privacidad", cookies: "Cookies"
-	cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra ",
-    cookieAccept: "ACEPTAR
-  },
-  fr: {
-    hero1: "CUSTOM", hero2: "SANS LIMITES.",
-    sub: "L'outil 3D ultime pour les builders. Créez votre Sportster.",
-    cta: "ACCÈS BETA", ph: "Votre email...",
-    procTitle: "PROCESSUS",
-    s1: "Châssis", s1d: "Choisissez votre base.",
-    s2: "Pièces", s2d: "Échappements et guidons premium.",
-    s3: "Peinture 3D", s3d: "Flake, mat ou brillant.",
-    s4: "Atelier", s4d: "Envoyez le plan à votre mécanicien.",
-    legal: "Légal", privacy: "Confidentialité", cookies: "Cookies"
-	cookieText: "Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre ",
-    cookieAccept: "ACCEPTER"
+    heroTitle: "CONSTRUYE TU SUEÑO",
+    heroSubtitle: "EL CONFIGURADOR 3D DEFINITIVO PARA SPORTSTER",
+    joinBeta: "ÚNETE A LA BETA",
+    emailPlaceholder: "TU CORREO ELECTRÓNICO",
+    footerLegal: "LEGAL",
+    footerPrivacy: "PRIVACIDAD",
+    footerCookies: "COOKIES",
+    cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra ",
+    cookieAccept: "ACEPTAR"
   },
   de: {
-    hero1: "CUSTOM", hero2: "OHNE GRENZEN.",
-    sub: "Das ultimative 3D-Tool. Gestalte deine Sportster neu.",
-    cta: "BETA-ZUGANG", ph: "Deine E-Mail...",
-    procTitle: "PROZESS",
-    s1: "Fahrgestell", s1d: "Wähle deine Basis.",
-    s2: "Teile", s2d: "Auspuff und Lenker.",
-    s3: "3D-Lack", s3d: "Flake, Matt oder Glanz.",
-    s4: "Werkstatt", s4d: "Sende den Plan an deinen Shop.",
-    legal: "Rechtliches", privacy: "Datenschutz", cookies: "Cookies"
-	cookieText: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch Fortfahren akzeptieren Sie unsere ",
+    heroTitle: "BAU DEINEN TRAUM",
+    heroSubtitle: "DER ULTIMATIVE 3D SPORTSTER KONFIGURATOR",
+    joinBeta: "BETA BEITRETEN",
+    emailPlaceholder: "DEINE E-MAIL",
+    footerLegal: "RECHTLICHES",
+    footerPrivacy: "DATENSCHUTZ",
+    footerCookies: "COOKIES",
+    cookieText: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Mit der Fortsetzung akzeptieren Sie unsere ",
     cookieAccept: "AKZEPTIEREN"
   },
   it: {
-    hero1: "CUSTOM", hero2: "SENZA LIMITI.",
-    sub: "Lo strumento 3D definitivo. Progetta la tua Sportster.",
-    cta: "ACCESSO BETA", ph: "La tua email...",
-    procTitle: "PROCESSO",
-    s1: "Telaio", s1d: "Scegli la tua base.",
-    s2: "Parti", s2d: "Scarichi e manubri premium.",
-    s3: "Vernice 3D", s3d: "Flake, opaca o lucida.",
-    s4: "Officina", s4d: "Invia il progetto al meccanico.",
-    legal: "Legale", privacy: "Privacy", cookies: "Cookies"
-	cookieText: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando la navigazione, accetti la nostra ",
+    heroTitle: "COSTRUISCI IL TUO SOGNO",
+    heroSubtitle: "IL CONFIGURATORE 3D SPORTSTER DEFINITIVO",
+    joinBeta: "UNISCITI ALLA BETA",
+    emailPlaceholder: "LA TUA EMAIL",
+    footerLegal: "LEGALE",
+    footerPrivacy: "PRIVACY",
+    footerCookies: "COOKIES",
+    cookieText: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando, accetti la nostra ",
     cookieAccept: "ACCETTA"
+  },
+  fr: {
+    heroTitle: "CONSTRUISEZ VOTRE RÊVE",
+    heroSubtitle: "LE CONFIGURATEUR 3D SPORTSTER ULTIME",
+    joinBeta: "REJOINDRE LA BÊTA",
+    emailPlaceholder: "VOTRE E-MAIL",
+    footerLegal: "MENTIONS LÉGALES",
+    footerPrivacy: "CONFIDENTIALITÉ",
+    footerCookies: "COOKIES",
+    cookieText: "Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre ",
+    cookieAccept: "ACCEPTER"
   }
 };
 ---
 
 <Layout title="Sportster Inspiration | 3D Configurator">
-	<nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black border-b border-zinc-900">
-		<div class="font-black text-xl tracking-tighter uppercase italic text-white">SPORTSTER<span class="text-orange-600">INSPIRATION</span></div>
-		<div class="flex items-center gap-4">
-			<select id="langSelector" class="bg-zinc-900 text-white border border-zinc-800 text-[10px] font-bold py-1 px-2 uppercase outline-none cursor-pointer hover:border-orange-600 transition-colors">
-				<option value="en" class="bg-zinc-900 text-white">EN</option>
-				<option value="es" class="bg-zinc-900 text-white">ES</option>
-				<option value="de" class="bg-zinc-900 text-white">DE</option>
-				<option value="it" class="bg-zinc-900 text-white">IT</option>
-				<option value="fr" class="bg-zinc-900 text-white">FR</option>
-			</select>
-		</div>
-	</nav>
+  <main class="relative h-screen w-full overflow-hidden bg-black">
+    
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/hero-moto.jpg" 
+        alt="Harley Sportster Custom" 
+        class="h-full w-full object-cover opacity-60"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50"></div>
+    </div>
 
-	<section class="relative h-[90vh] flex items-center justify-center px-6 bg-black">
-		<div class="absolute inset-0 opacity-60">
-			<img src="/landing-harley.webp" class="w-full h-full object-cover opacity-60 scale-100" alt="Harley Sportster Custom" />
-		</div>
-		<div class="relative z-10 text-center">
-			<h1 class="text-6xl md:text-[120px] font-black leading-[0.85] text-white uppercase italic tracking-tighter mb-6">
-				<span data-key="hero1">CUSTOM</span><br/><span data-key="hero2">WITHOUT LIMITS.</span>
-			</h1>
-			<p class="text-zinc-400 text-lg mb-8 max-w-xl mx-auto" data-key="sub"></p>
-			<form action="https://assets.mailerlite.com/jsonp/2073020/forms/177926962836145822/subscribe" method="POST" class="flex flex-col md:flex-row max-w-md mx-auto border border-zinc-800 p-1 bg-black/50">
-				<input type="email" name="fields[email]" data-key-placeholder="ph" class="bg-transparent p-4 w-full text-white outline-none text-sm" required />
-				<button type="submit" class="bg-white text-black font-black px-8 py-4 text-xs uppercase hover:bg-orange-600 hover:text-white transition-all" data-key="cta"></button>
-			</form>
-		</div>
-	</section>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <h1 class="mb-2 text-6xl font-black italic tracking-tighter text-white md:text-9xl" data-key="heroTitle">
+        BUILD YOUR DREAM
+      </h1>
+      <p class="mb-12 text-xs font-bold tracking-[0.3em] text-zinc-400 md:text-sm" data-key="heroSubtitle">
+        THE ULTIMATE 3D SPORTSTER CONFIGURATOR
+      </p>
 
-	<section class="py-24 bg-black px-6">
-		<h2 class="text-4xl font-black text-white text-center mb-16 italic uppercase" data-key="procTitle"></h2>
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-			<div class="text-center">
-				<div class="text-orange-600 font-black text-4xl mb-4 italic">01</div>
-				<h3 class="text-white font-bold uppercase mb-2" data-key="s1"></h3>
-				<p class="text-zinc-500 text-sm" data-key="s1d"></p>
-			</div>
-			<div class="text-center">
-				<div class="text-orange-600 font-black text-4xl mb-4 italic">02</div>
-				<h3 class="text-white font-bold uppercase mb-2" data-key="s2"></h3>
-				<p class="text-zinc-500 text-sm" data-key="s2d"></p>
-			</div>
-			<div class="text-center">
-				<div class="text-orange-600 font-black text-4xl mb-4 italic">03</div>
-				<h3 class="text-white font-bold uppercase mb-2" data-key="s3"></h3>
-				<p class="text-zinc-500 text-sm" data-key="s3d"></p>
-			</div>
-			<div class="text-center">
-				<div class="text-orange-600 font-black text-4xl mb-4 italic">04</div>
-				<h3 class="text-white font-bold uppercase mb-2" data-key="s4"></h3>
-				<p class="text-zinc-500 text-sm" data-key="s4d"></p>
-			</div>
-		</div>
-	</section>
+      <form 
+        id="join"
+        action="https://assets.mailerlite.com/jsonp/2073020/forms/177926962836145822/subscribe" 
+        method="POST" 
+        class="flex w-full max-w-md flex-col gap-2 md:flex-row md:gap-0"
+      >
+        <input 
+          type="email" 
+          name="fields[email]" 
+          placeholder="ENTER YOUR EMAIL" 
+          required 
+          class="flex-grow bg-black/80 border border-zinc-800 px-6 py-4 text-xs font-bold text-white outline-none focus:border-orange-600 transition-colors placeholder:text-zinc-600"
+          data-key="emailPlaceholder"
+        />
+        <button 
+          type="submit" 
+          class="bg-white px-8 py-4 text-xs font-bold uppercase tracking-widest text-black hover:bg-orange-600 hover:text-white transition-all duration-300"
+          data-key="joinBeta"
+        >
+          JOIN BETA
+        </button>
+      </form>
+    </div>
 
-	<footer class="py-12 bg-black border-t border-zinc-900 px-6 text-center">
-		<div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-			<a href="/legal" data-key="legal" class="hover:text-white"></a>
-			<a href="/privacy" data-key="privacy" class="hover:text-white"></a>
-			<a href="/cookies" data-key="cookies" class="hover:text-white"></a>
-		</div>
-		<p class="text-[9px] text-zinc-700 uppercase">© 2026 Sportster Inspiration. All rights reserved.</p>
-	</footer>
+    <div class="absolute bottom-10 right-10 z-20">
+      <select 
+        id="langSelector" 
+        class="bg-zinc-900 text-white border border-zinc-800 text-[10px] font-bold py-2 px-3 uppercase outline-none cursor-pointer hover:border-orange-600 transition-colors"
+      >
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="de">DE</option>
+        <option value="it">IT</option>
+        <option value="fr">FR</option>
+      </select>
+    </div>
+  </main>
 </Layout>
 
-<script define:vars={{ translations }}>
-	const selector = document.getElementById('langSelector');
-	function update(lang) {
-		const d = translations[lang] || translations['en'];
-		document.querySelectorAll('[data-key]').forEach(el => el.innerText = d[el.getAttribute('data-key')]);
-		document.querySelectorAll('[data-key-placeholder]').forEach(el => el.placeholder = d[el.getAttribute('data-key-placeholder')]);
-		selector.value = lang;
-	}
-	const nLang = navigator.language.split('-')[0];
-	update(['en','es','de','it','fr'].includes(nLang) ? nLang : 'en');
-	selector.addEventListener('change', (e) => update(e.target.value));
+<script is:inline define:vars={{ translations }}>
+  const langSelector = document.getElementById('langSelector');
+  
+  function updateLanguage(lang) {
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (translations[lang][key]) {
+        if (el.tagName === 'INPUT') {
+          el.placeholder = translations[lang][key];
+        } else {
+          el.innerText = translations[lang][key];
+        }
+      }
+    });
+    localStorage.setItem('preferred-lang', lang);
+    langSelector.value = lang;
+  }
+
+  langSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
+
+  // Detectar idioma inicial
+  const savedLang = localStorage.getItem('preferred-lang');
+  const browserLang = navigator.language.split('-')[0];
+  const defaultLang = savedLang || (translations[browserLang] ? browserLang : 'en');
+  
+  updateLanguage(defaultLang);
 </script>

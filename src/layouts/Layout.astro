@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="ca" class="scroll-smooth">
+<html lang="ca" class="scroll-smooth bg-black">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -48,16 +48,17 @@ const { title } = Astro.props;
         </div>
 
         <script is:inline>
-            // Lògica per mostrar/amagar el banner
             const banner = document.getElementById('cookie-banner');
             const btn = document.getElementById('accept-cookies');
 
+            // Mostrar el banner si no s'ha acceptat
             if (!localStorage.getItem('cookies-accepted')) {
                 setTimeout(() => {
-                    banner.classList.remove('translate-y-full');
+                    if (banner) banner.classList.remove('translate-y-full');
                 }, 1000);
             }
 
+            // Guardar acceptació
             btn?.addEventListener('click', () => {
                 localStorage.setItem('cookies-accepted', 'true');
                 banner.classList.add('translate-y-full');
@@ -67,6 +68,16 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+    /* Tipografies i correccions globals */
     h1, h2, h3 { font-family: 'Oswald', sans-serif; }
-    body { font-family: 'Inter', sans-serif; background-color: black; }
+    body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: black; 
+        margin: 0;
+    }
+    
+    /* Millora del scroll smooth per a tota la web */
+    html {
+        scroll-behavior: smooth;
+    }
 </style>
