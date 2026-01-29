@@ -1,12 +1,22 @@
 ---
 import '../styles/global.css';
+// Importem els teus fitxers JSON
+import en from '../languages/en.json';
+import es from '../languages/es.json';
+import de from '../languages/de.json';
+import it from '../languages/it.json';
+import fr from '../languages/fr.json';
+
+// Ajuntem totes les traduccions en un sol objecte
+const allTranslations = { en, es, de, it, fr };
+
 interface Props {
     title: string;
 }
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="ca" class="scroll-smooth bg-black">
+<html lang="en" class="scroll-smooth bg-black">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -15,26 +25,26 @@ const { title } = Astro.props;
     </head>
     <body class="bg-black text-white antialiased min-h-screen flex flex-col">
         
-	<nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-zinc-900">
-		<a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
-			SPORTSTER<span class="text-orange-600">INSPIRATION</span>
-		</a>
-		
-		<div class="flex items-center gap-4">
-			<select 
-				id="langSelector" 
-				class="bg-transparent text-zinc-500 border border-zinc-800 text-[10px] font-bold py-1 px-2 uppercase outline-none cursor-pointer hover:text-white hover:border-white transition-all"
-			>
-				<option value="en">EN</option>
-				<option value="es">ES</option>
-				<option value="de">DE</option>
-				<option value="it">IT</option>
-				<option value="fr">FR</option>
-			</select>
+        <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-zinc-900">
+            <a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
+                SPORTSTER<span class="text-orange-600">INSPIRATION</span>
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <select 
+                    id="langSelector" 
+                    class="bg-transparent text-zinc-400 border-none text-[11px] font-bold uppercase outline-none cursor-pointer hover:text-white transition-colors"
+                >
+                    <option value="en" class="bg-black">EN</option>
+                    <option value="es" class="bg-black">ES</option>
+                    <option value="de" class="bg-black">DE</option>
+                    <option value="it" class="bg-black">IT</option>
+                    <option value="fr" class="bg-black">FR</option>
+                </select>
 
-			<a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap">JOIN BETA</a>
-		</div>
-	</nav>
+                <a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap">JOIN BETA</a>
+            </div>
+        </nav>
 
         <main class="flex-grow pt-[88px]">
             <slot />
@@ -42,9 +52,9 @@ const { title } = Astro.props;
 
         <footer class="py-12 bg-black border-t border-zinc-900 px-6 text-center">
             <div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-                <a href="/legal" class="hover:text-white transition-colors">Legal</a>
-                <a href="/privacy" class="hover:text-white transition-colors">Privacidad</a>
-                <a href="/cookies" class="hover:text-white transition-colors">Cookies</a>
+                <a href="/legal" class="hover:text-white transition-colors" data-key="footerLegal">Legal</a>
+                <a href="/privacy" class="hover:text-white transition-colors" data-key="footerPrivacy">Privacidad</a>
+                <a href="/cookies" class="hover:text-white transition-colors" data-key="footerCookies">Cookies</a>
             </div>
             <p class="text-[9px] text-zinc-700 uppercase tracking-widest">© 2026 Sportster Inspiration. All rights reserved.</p>
         </footer>
@@ -53,7 +63,7 @@ const { title } = Astro.props;
             <div class="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-zinc-400 text-xs leading-relaxed text-left">
                     <span data-key="cookieText">Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra </span>
-                    <a href="/cookies" class="text-white underline" data-key="cookies">cookies</a>.
+                    <a href="/cookies" class="text-white underline" data-key="footerCookies">cookies</a>.
                 </p>
                 <button id="accept-cookies" class="bg-white text-black text-[10px] font-black px-6 py-2 uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap" data-key="cookieAccept">
                     ACEPTAR
@@ -61,37 +71,53 @@ const { title } = Astro.props;
             </div>
         </div>
 
-        <script is:inline>
-            const banner = document.getElementById('cookie-banner');
-            const btn = document.getElementById('accept-cookies');
+        <script is:inline define:vars={{ allTranslations }}>
+            const langSelector = document.getElementById('langSelector');
+            
+            function updateLanguage(lang) {
+                const translations = allTranslations[lang];
+                if (!translations) return;
 
-            // Mostrar el banner si no s'ha acceptat
-            if (!localStorage.getItem('cookies-accepted')) {
-                setTimeout(() => {
-                    if (banner) banner.classList.remove('translate-y-full');
-                }, 1000);
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (translations[key]) {
+                        if (el.tagName === 'INPUT') {
+                            el.placeholder = translations[key];
+                        } else {
+                            el.innerText = translations[key];
+                        }
+                    }
+                });
+
+                localStorage.setItem('preferred-lang', lang);
+                if (langSelector) langSelector.value = lang;
+                document.documentElement.lang = lang;
             }
 
-            // Guardar acceptació
+            langSelector?.addEventListener('change', (e) => updateLanguage(e.target.value));
+
+            // Inicialització
+            const savedLang = localStorage.getItem('preferred-lang');
+            const browserLang = navigator.language.split('-')[0];
+            const defaultLang = savedLang || (allTranslations[browserLang] ? browserLang : 'en');
+            updateLanguage(defaultLang);
+
+            // Lògica de Cookies (independent)
+            const banner = document.getElementById('cookie-banner');
+            const btn = document.getElementById('accept-cookies');
+            if (!localStorage.getItem('cookies-accepted')) {
+                setTimeout(() => banner?.classList.remove('translate-y-full'), 1000);
+            }
             btn?.addEventListener('click', () => {
                 localStorage.setItem('cookies-accepted', 'true');
-                banner.classList.add('translate-y-full');
+                banner?.classList.add('translate-y-full');
             });
         </script>
     </body>
 </html>
 
 <style is:global>
-    /* Tipografies i correccions globals */
     h1, h2, h3 { font-family: 'Oswald', sans-serif; }
-    body { 
-        font-family: 'Inter', sans-serif; 
-        background-color: black; 
-        margin: 0;
-    }
-    
-    /* Millora del scroll smooth per a tota la web */
-    html {
-        scroll-behavior: smooth;
-    }
+    body { font-family: 'Inter', sans-serif; background-color: black; margin: 0; }
+    html { scroll-behavior: smooth; }
 </style>
