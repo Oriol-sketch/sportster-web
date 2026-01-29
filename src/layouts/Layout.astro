@@ -15,12 +15,26 @@ const { title } = Astro.props;
     </head>
     <body class="bg-black text-white antialiased min-h-screen flex flex-col">
         
-        <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-zinc-900">
-            <a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
-                SPORTSTER<span class="text-orange-600">INSPIRATION</span>
-            </a>
-            <a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all">JOIN BETA</a>
-        </nav>
+	<nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-zinc-900">
+		<a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
+			SPORTSTER<span class="text-orange-600">INSPIRATION</span>
+		</a>
+		
+		<div class="flex items-center gap-4">
+			<select 
+				id="langSelector" 
+				class="bg-transparent text-zinc-500 border border-zinc-800 text-[10px] font-bold py-1 px-2 uppercase outline-none cursor-pointer hover:text-white hover:border-white transition-all"
+			>
+				<option value="en">EN</option>
+				<option value="es">ES</option>
+				<option value="de">DE</option>
+				<option value="it">IT</option>
+				<option value="fr">FR</option>
+			</select>
+
+			<a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap">JOIN BETA</a>
+		</div>
+	</nav>
 
         <main class="flex-grow pt-[88px]">
             <slot />
