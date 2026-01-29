@@ -13,6 +13,8 @@ const translations = {
     step2Desc: "Change tanks, seats, bars and more in 3D.",
     step3Title: "RIDE",
     step3Desc: "Export your build and make it real.",
+    step4Title: "SHARE",
+    step4Desc: "Show your creation to the community.",
     cookieText: "We use cookies to improve your experience. By continuing, you accept our ",
     cookieAccept: "ACCEPT",
     cookies: "cookies"
@@ -28,6 +30,8 @@ const translations = {
     step2Desc: "Cambia depósitos, asientos y más en 3D.",
     step3Title: "RIDE",
     step3Desc: "Exporta tu diseño y hazlo realidad.",
+    step4Title: "COMPARTE",
+    step4Desc: "Enseña tu creación a la comunidad.",
     cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra ",
     cookieAccept: "ACEPTAR",
     cookies: "cookies"
@@ -43,6 +47,8 @@ const translations = {
     step2Desc: "Changez réservoirs, selles et plus en 3D.",
     step3Title: "ROULER",
     step3Desc: "Exportez votre projet et donnez-lui vie.",
+    step4Title: "PARTAGER",
+    step4Desc: "Montrez votre création à la communauté.",
     cookieText: "Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre ",
     cookieAccept: "ACCEPTER",
     cookies: "cookies"
@@ -58,6 +64,8 @@ const translations = {
     step2Desc: "Tanks, Sitze, Lenker und mehr in 3D ändern.",
     step3Title: "FAHREN",
     step3Desc: "Exportiere dein Design und mach es wahr.",
+    step4Title: "TEILEN",
+    step4Desc: "Zeige deine Kreation der Community.",
     cookieText: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Mit der Fortsetzung akzeptieren Sie unsere ",
     cookieAccept: "AKZEPTIEREN",
     cookies: "cookies"
@@ -73,6 +81,8 @@ const translations = {
     step2Desc: "Cambia serbatoi, sella e altro in 3D.",
     step3Title: "GUIDA",
     step3Desc: "Esporta il tuo design e rendilo reale.",
+    step4Title: "CONDIVIDI",
+    step4Desc: "Mostra la tua creazione alla community.",
     cookieText: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando, accetti la nostra ",
     cookieAccept: "ACCETTA",
     cookies: "cookies"
@@ -125,21 +135,26 @@ const translations = {
   </section>
 
   <section class="bg-black py-32 px-6 border-t border-zinc-900 relative z-10">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
       <div class="text-center group">
         <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">01</span>
         <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step1Title">CHOOSE BASE</h3>
-        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step1Desc">Select your Sportster model year.</p>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[200px] mx-auto" data-key="step1Desc">Select your Sportster model year.</p>
       </div>
       <div class="text-center group">
         <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">02</span>
         <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step2Title">CUSTOMIZE</h3>
-        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step2Desc">Change tanks, seats, bars and more in 3D.</p>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[200px] mx-auto" data-key="step2Desc">Change tanks, seats, bars and more in 3D.</p>
       </div>
       <div class="text-center group">
         <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">03</span>
         <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step3Title">RIDE</h3>
-        <p class="text-zinc-500 text-xs leading-relaxed max-w-[250px] mx-auto" data-key="step3Desc">Export your build and make it real.</p>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[200px] mx-auto" data-key="step3Desc">Export your build and make it real.</p>
+      </div>
+      <div class="text-center group">
+        <span class="text-orange-600 font-black text-5xl italic mb-6 block group-hover:scale-110 transition-transform">04</span>
+        <h3 class="text-white font-bold uppercase tracking-widest mb-4 text-lg" data-key="step4Title">SHARE</h3>
+        <p class="text-zinc-500 text-xs leading-relaxed max-w-[200px] mx-auto" data-key="step4Desc">Show your creation to the community.</p>
       </div>
     </div>
   </section>
@@ -162,7 +177,6 @@ const translations = {
   const langSelector = document.getElementById('langSelector');
   
   function updateLanguage(lang) {
-    // 1. Actualizar textos en la página (Landing + Banner en Layout)
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
       if (translations[lang] && translations[lang][key]) {
@@ -173,18 +187,13 @@ const translations = {
         }
       }
     });
-
-    // 2. Guardar preferencia
     localStorage.setItem('preferred-lang', lang);
     langSelector.value = lang;
-    
-    // 3. Cambiar el atributo lang del HTML para SEO
     document.documentElement.lang = lang;
   }
 
   langSelector.addEventListener('change', (e) => updateLanguage(e.target.value));
 
-  // Inicialización
   const savedLang = localStorage.getItem('preferred-lang');
   const browserLang = navigator.language.split('-')[0];
   const defaultLang = savedLang || (translations[browserLang] ? browserLang : 'en');
