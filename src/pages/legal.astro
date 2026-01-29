@@ -2,10 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Legal Notice | Sportster Inspiration">
-  <section class="bg-black text-zinc-400 px-6 py-32 max-w-3xl mx-auto font-light leading-relaxed">
-    <h1 class="text-white text-4xl font-black italic uppercase mb-10">Avís Legal</h1>
-    <p class="mb-6">En compliment de la Llei 34/2002, t'informem que aquest lloc web és propietat de Sportster Inspiration (Oriol Sketch).</p>
-    <p>Tot el contingut visual i intel·lectual generat en aquesta web és propietat exclusiva de la marca, exceptuant les imatges de llicència lliure utilitzades.</p>
-    <a href="/" class="inline-block mt-12 text-orange-500 font-bold uppercase tracking-widest text-xs">← Tornar a la web</a>
-  </section>
+	<section class="max-w-3xl mx-auto px-6 py-24">
+		<h1 class="text-5xl md:text-7xl font-black italic uppercase mb-12 tracking-tighter">
+			LEGAL <span class="text-orange-600">NOTICE</span>
+		</h1>
+		
+		<div class="text-zinc-400 space-y-12 font-light leading-relaxed">
+			<div>
+				<h2 class="text-white text-xl font-bold uppercase mb-4 tracking-wider underline decoration-orange-600 underline-offset-8">1. TITULARIDAD</h2>
+				<p>En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información, se informa que este sitio es gestionado por Sportster Inspiration. Para cualquier consulta técnica o legal, puedes contactar con nosotros a través de los canales oficiales de la marca.</p>
+			</div>
+
+			<div>
+				<h2 class="text-white text-xl font-bold uppercase mb-4 tracking-wider underline decoration-orange-600 underline-offset-8">2. PROPIEDAD INTELECTUAL</h2>
+				<p>Todo el diseño, código fuente y configuraciones 3D son propiedad exclusiva de Sportster Inspiration. Queda prohibida la reproducción total o parcial del contenido sin autorización previa.</p>
+			</div>
+		</div>
+
+		<a href="/" class="inline-block mt-20 border-b border-orange-600 text-orange-600 pb-1 font-black uppercase text-xs tracking-[0.3em] hover:text-white hover:border-white transition-all">
+			← BACK TO GARAGE
+		</a>
+	</section>
 </Layout>
