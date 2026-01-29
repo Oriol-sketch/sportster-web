@@ -15,6 +15,35 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-zinc-950 text-zinc-100 selection:bg-orange-500">
 		<slot />
+		
+		<div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-[100] p-4 translate-y-full transition-transform duration-500">
+			<div class="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+				<p class="text-zinc-400 text-xs leading-relaxed">
+					Utilizamos cookies propias y de terceros para mejorar tu experiencia. Al continuar navegando, consideramos que aceptas nuestra 
+					<a href="/cookies" class="text-white underline">política de cookies</a>.
+				</p>
+				<button id="accept-cookies" class="bg-white text-black text-[10px] font-black px-6 py-2 uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap">
+					Aceptar
+				</button>
+			</div>
+		</div>
+
+		<script>
+			const banner = document.getElementById('cookie-banner');
+			const btn = document.getElementById('accept-cookies');
+
+			// Comprovar si ja ha acceptat abans
+			if (!localStorage.getItem('cookies-accepted')) {
+				setTimeout(() => {
+					banner.classList.remove('translate-y-full');
+				}, 1000);
+			}
+
+			btn.addEventListener('click', () => {
+				localStorage.setItem('cookies-accepted', 'true');
+				banner.classList.add('translate-y-full');
+			});
+		</script>
 	</body>
 </html>
 
