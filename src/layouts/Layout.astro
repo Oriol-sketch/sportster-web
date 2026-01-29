@@ -1,44 +1,72 @@
 ---
 import '../styles/global.css';
 interface Props {
-	title: string;
+    title: string;
 }
 const { title } = Astro.props;
 ---
 <!doctype html>
 <html lang="ca" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-	</head>
-	<body class="bg-black text-white antialiased min-h-screen flex flex-col">
-		
-		<nav class="w-full z-50 px-8 py-6 flex justify-between items-center bg-black border-b border-zinc-900">
-			<a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
-				SPORTSTER<span class="text-orange-600">INSPIRATION</span>
-			</a>
-			<a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all">JOIN BETA</a>
-		</nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-black text-white antialiased min-h-screen flex flex-col">
+        
+        <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-zinc-900">
+            <a href="/" class="font-black text-xl tracking-tighter uppercase italic text-white hover:text-orange-600 transition-colors">
+                SPORTSTER<span class="text-orange-600">INSPIRATION</span>
+            </a>
+            <a href="/#join" class="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all">JOIN BETA</a>
+        </nav>
 
-		<main class="flex-grow">
-			<slot />
-		</main>
+        <main class="flex-grow pt-[88px]">
+            <slot />
+        </main>
 
-		<footer class="py-12 bg-black border-t border-zinc-900 px-6 text-center">
-			<div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-				<a href="/legal" class="hover:text-white transition-colors">Legal</a>
-				<a href="/privacy" class="hover:text-white transition-colors">Privacidad</a>
-				<a href="/cookies" class="hover:text-white transition-colors">Cookies</a>
-			</div>
-			<p class="text-[9px] text-zinc-700 uppercase tracking-widest">© 2026 Sportster Inspiration. All rights reserved.</p>
-		</footer>
+        <footer class="py-12 bg-black border-t border-zinc-900 px-6 text-center">
+            <div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                <a href="/legal" class="hover:text-white transition-colors">Legal</a>
+                <a href="/privacy" class="hover:text-white transition-colors">Privacidad</a>
+                <a href="/cookies" class="hover:text-white transition-colors">Cookies</a>
+            </div>
+            <p class="text-[9px] text-zinc-700 uppercase tracking-widest">© 2026 Sportster Inspiration. All rights reserved.</p>
+        </footer>
 
-		</body>
+        <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-[100] p-4 translate-y-full transition-transform duration-500">
+            <div class="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-zinc-400 text-xs leading-relaxed text-left">
+                    <span data-key="cookieText">Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra </span>
+                    <a href="/cookies" class="text-white underline" data-key="cookies">cookies</a>.
+                </p>
+                <button id="accept-cookies" class="bg-white text-black text-[10px] font-black px-6 py-2 uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all whitespace-nowrap" data-key="cookieAccept">
+                    ACEPTAR
+                </button>
+            </div>
+        </div>
+
+        <script is:inline>
+            // Lògica per mostrar/amagar el banner
+            const banner = document.getElementById('cookie-banner');
+            const btn = document.getElementById('accept-cookies');
+
+            if (!localStorage.getItem('cookies-accepted')) {
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 1000);
+            }
+
+            btn?.addEventListener('click', () => {
+                localStorage.setItem('cookies-accepted', 'true');
+                banner.classList.add('translate-y-full');
+            });
+        </script>
+    </body>
 </html>
 
 <style is:global>
-	h1, h2, h3 { font-family: 'Oswald', sans-serif; }
-	body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Oswald', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: black; }
 </style>
